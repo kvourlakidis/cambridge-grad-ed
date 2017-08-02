@@ -2,3 +2,5 @@
 *.class
 # ignore all logs
 *.log
+# ignore temp files
+*.swp
