@@ -1,0 +1,4 @@
+# ignore compiled classes
+*.class
+# ignore all logs
+*.log
