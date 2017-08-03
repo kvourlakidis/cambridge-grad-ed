@@ -6,7 +6,7 @@ Public repository for Cambridge graduates education related materials.
 
 To download the repository locally:
    ```
-   git clone git@github.com:kvourlakidis/i2-grad-ed.git
+   git clone git@github.com:kvourlakidis/cambridge-grad-ed.git
    
 ```
 from your projects directory.
