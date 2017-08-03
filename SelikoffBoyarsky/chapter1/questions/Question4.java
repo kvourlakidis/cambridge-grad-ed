@@ -1,9 +1,14 @@
-// [QUESTION]
-
-public class QuestionNum {
-	public staic void main(String[] args) {
-		// body
+public class Question4 {
+	// String result = "done";
+	public void shed(boolean time) {
+		// String result = "done";
+		if (time) {
+			// String result = "done";
+		}
+		System.out.println(result);
+		// String result = "done";
 	}
 }
 
-// [ANSWERS]
+// QUESTION
+// Which of the commented out lines can be un-commented to make the class compile?

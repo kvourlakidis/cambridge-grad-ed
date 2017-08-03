@@ -1,0 +1,7 @@
+Which of the following are true? (Choose all that apply)
+javac compiles a .class file into a .java file.
+javac compiles a .java file into a .bytecode file.
+javac compiles a .java file into a .class file.
+Java takes the name of the class as a parameter.
+Java takes the name of the .bytecode file as a parameter.
+Java takes the name of the .class file as a parameter.
