@@ -1,6 +1,6 @@
-## i2-grad-ed
+## cambridge-grad-ed
 
-Public repository for i2 graduates education related materials.
+Public repository for Cambridge graduates education related materials.
 
 ## Installation
 
