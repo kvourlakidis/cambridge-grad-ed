@@ -4,3 +4,5 @@
 *.log
 # ignore temp files
 *.swp
+# ignore OSX crap
+*.DS_Store
