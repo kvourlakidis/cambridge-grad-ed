@@ -1,12 +1,12 @@
-public class Question4 {
-	// String result = "done";
+public class Question04 {
+	// String result = "done"; // fine because shed is not static !!!
 	public void shed(boolean time) {
-		// String result = "done";
+		String result = "done"; // fine because local variable
 		if (time) {
-			// String result = "done";
+			// String result = "done"; // not fine because inside an if block
 		}
 		System.out.println(result);
-		// String result = "done";
+		// String result = "done"; // not fine because trying to use "result" in line  above
 	}
 }
 

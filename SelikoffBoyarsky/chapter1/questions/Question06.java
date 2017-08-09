@@ -7,10 +7,10 @@ public class Water {}
 
 package aquarium;
 
-import java.lang.*;
-import java.lang.System;
-import aquarium.Water;
-import aquarium.*;
+import java.lang.*;       // imported by the JVM by default
+import java.lang.System;  // same as above
+import aquarium.Water;    // not needed (same package)
+import aquarium.*;        // not needed (same package)
 
 public class Tank {
 	public void print(Water water) {

@@ -11,11 +11,11 @@ public class Water {
 ///////////////////////////////
 package employee;
 
-// import aquarium.*;
-// import aquarium.Water; import aquarium.jellies.*;
-// import aquarium.*; import aquarium.jellies.Water;
-// import aquarium.*; import aquarium.jellies.*;
-// import aquarium.Water; import aquarium.jellies.Water;
+// import aquarium.*;                                 // fine 
+// import aquarium.Water; import aquarium.jellies.*;  // crazy but will work
+// import aquarium.*; import aquarium.jellies.Water;  // same as above 
+// import aquarium.*; import aquarium.jellies.*;      // won't work - class name ambiguity
+// import aquarium.Water; import aquarium.jellies.Water; // won't work - class name ambiguity
 
 public class WaterFiller {
   Water water;
