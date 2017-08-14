@@ -1,4 +1,4 @@
-// What is the 10 001st prime?
+// What is the 10_001st prime?
 
 public class Problem007 {
 	public static void main(String[] args) {
