@@ -6,7 +6,6 @@
 import java.io.IOException;
 import java.io.FileReader;
 import java.io.BufferedReader;
-import java.util.ArrayList;
 
 public class Problem011 {
 	public static void main(String[] args) throws IOException {
@@ -33,21 +32,17 @@ public class Problem011 {
 
 class Kirill {
 
-	private static final int GRID_SIZE = 20;
-
 	static void main(int[][] grid) {
 
-		// check all the horizontals
-		for (int i=0;i<GRID_SIZE;i++) {
-			// maxInRow(grid[i]);
-			break;
-		}
+		final int M = grid.length;
+		final int N = 4;
 
 		// flip the grid
 		int[][] flippedGrid = flip(grid);
 
-		// check all the verticals
-		for (int i=0;i<GRID_SIZE;i++) {
+		// check all the horizontals and verticals
+		for (int i=0;i<M;i++) {
+			// maxInRow(grid[i]);
 			// maxInRow(flippedGrid[i]);
 			break;
 		}
@@ -55,31 +50,89 @@ class Kirill {
 		// check all the diagonals
 
 		// check the positively sloping diagonals
-		for (int i=0;i<GRID_SIZE;i++) {
-			ArrayList<int> intList = new ArrayList<>();
+		System.out.println("Checking all the positively sloping diagonals - 1st half");
+		for (int i=0;i<M;i++) {
+			int[] intList = new int[M];
+			int counter = 0;
 			try {
 				for(int x=i,y=0;true;x--,y++) {
-					intList.add(grid[x][y]);
+					intList[counter] = grid[y][x];
+					counter++;
 				}
 			} catch (ArrayIndexOutOfBoundsException ex) {
-				maxInRow(intList.toArray());
-				break;
- 				
+				int[] subList = new int[counter]; 
+				System.arraycopy(intList, 0, subList, 0, counter);
+				// maxInRow(subList);
+				for (int k : subList) System.out.print(k + " ");
+ 				System.out.println();
+			}
+		}
+		System.out.println("Checking all the positively sloping diagonals - 2nd half");
+		for (int i=1;i<M;i++) {
+			int[] intList = new int[M];
+			int counter = 0;
+			try {
+				for (int x=i,y=(M-1);true;x++,y--) {
+					intList[counter] = grid[y][x];
+					counter++;
+				}
+			} catch (ArrayIndexOutOfBoundsException ex) {
+				int[] subList = new int[counter];
+				System.arraycopy(intList, 0, subList, 0, counter);
+				// maxInRow(subList);
+				for (int k : subList) System.out.print(k + " ");
+				System.out.println();
 			}
 		}
 
 		// check the negatively sloping diagonals
+		System.out.println("Checking all the negatively sloping diagonals - 1st half");
+		for (int i=0;i<M;i++) {
+			int [] intList = new int[i+1];
+			int counter = 0;
+			for (int x=i,y=(M-1);x>=0;x--,y--) {
+				intList[counter] = grid[y][x];
+				counter++;
+			}
+			// maxInRow(intList);
+			for (int k : intList) System.out.print(k + " ");
+			System.out.println(); 
+		} 
+
+		System.out.println("Checking all the negatively sloping diagonals - 2nd half");
+		for (int i=1;i<M;i++) {
+			int[] intList = new int[M-i];
+			for (int x=i,y=0;x<M;x++,y++) {
+				intList[y] = grid[y][x];
+			}
+			for (int k : intList) System.out.print(k + " ");
+			System.out.println();
+		} 
 	}
 
+	/**
+	  * Loops through the input 1-dimensional
+	  * array, calculating the product of 4
+	  * consecutive elements at a time. 
+	  * Returns the greatest product.
+	  */
 	static int maxInRow(int[] row) {
-		final int numDigits = 4;
 		int maxProduct = 0;
-		for (int i=0;i<=(row.length-numDigits);i++) {
+		int curProduct;
+		for (int i=0;i<=(row.length-N);i++) {
 			System.out.println(row[i] + " " + row[i+1] + " " + row[i+2] + " " + row[i+3]);
+			curProduct = row[i] * row[i+1] * row[i+2] * row[i+3];
+			if (curProduct > maxProduct) maxProduct = curProduct;
 		}
-		return 0;
+		return maxProduct;
 	}
 
+	/**
+	  * Flips the input 2-dimentional matrix
+	  * so that the first row of the input
+	  * matrix, becomes the first column of
+	  * the output matrix, etc.
+	  */
 	static int[][] flip(int[][] grid) {
 		int height = grid.length;
 		int width  = grid[0].length;
