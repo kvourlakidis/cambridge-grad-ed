@@ -11,10 +11,15 @@ import java.util.HashMap;
 
 public class Problem017 {
 	public static void main(String[] args) {
-
+		int charCountSum = 0;
+		for (int i=1;i<=1000;i++) {
+			charCountSum += charCount(getEnglishNumber(i));
+		}
+		System.out.println(charCountSum);
 	}
 
 	static String getEnglishNumber(int x) {
+		if (x == 0) return "zero";
 		HashMap<Integer, String> numbers = new HashMap<>();
 		numbers.put(1, "one");
 		numbers.put(2, "two");
@@ -47,7 +52,36 @@ public class Problem017 {
 		final String k = "thousand";
 		final String and = "and";
 		final String hyphen = "-";
+		final String space = " ";
 
-				
+		String number = "";
+		int thousands = x / 1000;
+		x = x % 1000;
+		int hundreds = x / 100;
+		x = x % 100;
+		int tens;
+		if (x > 20) {
+			tens = x / 10;
+			x = x % 10;
+		} else {
+			tens = 0;
+		}
+		if (thousands > 0)
+			number += numbers.get(thousands) + space + k + space;
+		if (hundreds > 0)
+			number += numbers.get(hundreds) + space + c + space;
+		if (number.length() > 0 && (tens > 0 || x > 0))
+			number += and + space;
+		if (tens > 0)
+			number += numbers.get(tens * 10) + space;
+		if (x > 0)
+			number += numbers.get(x);
+		return number.trim();
+	}
+
+	static int charCount(String s) {
+		s = s.replace(" ", "");
+		s = s.replace("-","");
+		return s.length();
 	}
 }
