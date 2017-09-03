@@ -11,25 +11,89 @@
 
 public class Problem019 {
 	public static void main(String[] args) {
-		Day day = Day.MONDAY;
-		day = Day.TUESDAY;
-		System.out.println(day);
-		System.out.println(day.next());
+		int numOfSundays = 0;
+		Date d = new Date(Day.MONDAY, 1, Month.JANUARY, 1900);
+		while (d.getYear() < 2001) {
+			if (d.getDayOfMonth() == 1 && d.getDayOfWeek() == Day.SUNDAY) numOfSundays++;
+			d.next();
+		}
+		System.out.println(numOfSundays);
 	}
+}
+
+class Date {
+	private Day dayOfWeek;
+	private int dayOfMonth;
+	private Month month;
+	private int daysInMonth;
+	private int year;
+	private boolean leap;
+
+	Date(Day day, int dayOfMonth, Month month, int year) {
+		this.dayOfWeek = day;
+		this.dayOfMonth = dayOfMonth;
+		this.month = month;
+		this.year = year;
+		this.leap = isLeap(year);
+		this.daysInMonth = month.getDays(leap);
+	}
+	static boolean isLeap(int year) {
+		return (year % 4 == 0) ? (year % 100 == 0) ? (year % 400 == 0) ? true : false : true : false;
+	}
+	
+	boolean isLeap()    { return leap; }
+	int getDayOfMonth() { return dayOfMonth; }
+	Day getDayOfWeek()  { return dayOfWeek; }
+	Month getMonth()    { return month; }
+	int getYear()       { return year; }
+
+	void next() {
+		dayOfWeek = dayOfWeek.next();
+		dayOfMonth++;
+		if (dayOfMonth > daysInMonth) {
+			if (month == Month.DECEMBER) {
+				year++;
+				leap = isLeap(year);
+			}
+			month = month.next();
+			daysInMonth = month.getDays(leap);
+			dayOfMonth = 1;
+		}
+	}  
 }
 
 enum Day {
 	MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY,SUNDAY;
 
 	Day next() {
-		switch (this) {
-			case MONDAY: return TUESDAY;
-			case TUESDAY: return WEDNESDAY;
-			case WEDNESDAY: return THURSDAY;
-			case THURSDAY: return FRIDAY;
-			case FRIDAY: return SATURDAY;
-			case SATURDAY: return SUNDAY;
-			default: return MONDAY;
-		}
+		int pos = this.ordinal();
+		pos = (pos + 1) % 7;
+		return Day.values()[pos];
+	}
+}
+
+enum Month {
+	JANUARY(31), FEBRUARY(28), MARCH(31), APRIL(30), MAY(31), JUNE(30),
+	JULY(31), AUGUST(31), SEPTEMBER(30), OCTOBER(31), NOVEMBER(30), DECEMBER(31);
+
+	private final int days;
+
+	Month(int days) {
+		this.days = days;
+	}
+
+	public int getDays() { return getDays(false); }
+
+	public int getDays(boolean leap) {
+		if (this == FEBRUARY && leap == true) 
+			return (this.days + 1);
+		else
+			return this.days;
+	}
+
+	Month next() {
+		int pos = this.ordinal();
+		pos = (pos + 1) % 12;
+		return Month.values()[pos];
 	}
 }
