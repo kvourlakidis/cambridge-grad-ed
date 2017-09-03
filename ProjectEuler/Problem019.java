@@ -14,10 +14,13 @@ public class Problem019 {
 		int numOfSundays = 0;
 		Date d = new Date(Day.MONDAY, 1, Month.JANUARY, 1900);
 		while (d.getYear() < 2001) {
-			if (d.getDayOfMonth() == 1 && d.getDayOfWeek() == Day.SUNDAY) numOfSundays++;
+			if (d.getDayOfMonth() == 1 && d.getDayOfWeek() == Day.SUNDAY) {
+				numOfSundays++;
+				System.out.println(d.getDayOfMonth() + " " + d.getMonth() + " " + d.getYear());
+			}
 			d.next();
 		}
-		System.out.println(numOfSundays);
+		System.out.println("Months starting on Sunday in C20: " + numOfSundays);
 	}
 }
 
