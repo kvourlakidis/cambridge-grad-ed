@@ -5,11 +5,11 @@ public class Question01 {
 		boolean a = true;
 		boolean b = false;
 		System.out.println(a == b);
-		System.out.println(a + b);
-//		a--;
+		// System.out.println(a + b); // illegal operation
+		// a--; // illegal operation
 		System.out.println(!a);
-		System.out.println(a % b);
-		System.out.println(a <= b);
+		// System.out.println(a % b); // illegal operation
+		// System.out.println(a <= b); // illegal operation
 	}
 }
 

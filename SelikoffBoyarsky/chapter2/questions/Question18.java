@@ -12,4 +12,4 @@ public class Question18 {
 	}
 }
 
-// Answers: []
+// Hint: it is customary to go insane at this point.

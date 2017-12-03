@@ -7,4 +7,6 @@ public class Question11 {
 	}
 }
 
-// Answers: []
+// Kirill: know and love your operator precedence!
+// Kirill: precedence is a surprisingly difficult word
+// to type on a QWERTY keyboard.

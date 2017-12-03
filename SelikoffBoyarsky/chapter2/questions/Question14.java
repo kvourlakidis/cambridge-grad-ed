@@ -5,8 +5,9 @@ public class Question14 {
 		int c = 7;
 		int result = 4;
 		result += ++c;
+        result = result++;
 		System.out.println(result);
 	}
 }
 
-// Answers: []
+// Hint: just be happy this isn't C++. Bad dum.

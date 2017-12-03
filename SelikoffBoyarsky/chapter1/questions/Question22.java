@@ -1,8 +1,10 @@
 public class Question22 {
 	public static void main(String[] args) {
 		// operator overloading
-		String s = "a" + "b";
+		String s = "a" + 10;
 		int i = 10 + 4;
+        System.out.println(s);
+        System.out.println(i);
 	}
 }
 

@@ -9,4 +9,4 @@ public class Question13 {
 	}
 }
 
-// Answers: []
+// Hint: count the equalses.

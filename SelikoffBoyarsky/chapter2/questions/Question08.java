@@ -2,9 +2,9 @@
 
 public class Question08 {
 	public static void main(String[] args) {
-		boolean x = true, z = true;
+		boolean x = true, z = false;
 		int y = 20;
-		x = (y != 10) ^ (z = false);
+		x = (y != 10) && (z = true);
 		System.out.println(x + ", " + y + ", " + z);
 	}
 }

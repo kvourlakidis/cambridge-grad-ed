@@ -13,4 +13,8 @@ public class Question17 {
 	}
 }
 
-// Answers: []
+// Hint: the tomahawk is the weapon of choice
+// for killing the programmer that wrote this code.
+// Actually, I think we should start using do .. while
+// loops in places where while loops would have been 
+// perfectly reasonable.

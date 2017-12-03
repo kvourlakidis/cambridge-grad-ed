@@ -6,7 +6,7 @@ public class Question01 {
 		Object _helloWorld;  // fine
 		Object true;         // true is a reserved word
 		Object java.lang;    // cant have dots
-		Object Public;       // fine but evil (public is reserved, Public isn't) 
+		Object Public;       // fine but evil (public is reserved, Public isn't)
 		Object 1908_s;	     // identifiers can't start with a number	
 	}
 }

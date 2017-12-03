@@ -63,4 +63,24 @@ class Kirill {
 		System.out.println("Best route: " + bestRoute);
 		System.out.println("Best sum: " + bestSum);
 	}
+
+	static void main2(int[][] grid) {
+		String bestRoute = "";
+		int bestSum = 0;
+	}
+
+	class Node {
+		int value;
+		Node parent;
+		// List<Node> children;
+		int sum;
+
+		Node() {}
+
+		void calculateAndSetParent() {}
+
+		void setParent(Node parent) {
+			this.parent = parent;
+		}
+	}
 }

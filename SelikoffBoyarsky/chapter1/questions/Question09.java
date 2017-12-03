@@ -1,13 +1,12 @@
-public class QuestionNum {
-	public staic void main(/* blank */) {
+public class Question09 {
+	// public static void main(String[] _names) { // legal
+    // public static void main(String[] 123) {    // illegal identifier
+    // public static void main(String abc[]) {    // legal
+    // public static void main(String _Names[]) { // legal
+    // public static void main(String... $n) {    // legal
 		// body
 	}
 }
 
-// Which of the following legally fill in the blank:
-// String[] _names
-// String[] 123
-// String abc[]
-// String _Names[]
-// String... $n
-
+// Which of the commented out lines are a legal
+// main() method declaration?

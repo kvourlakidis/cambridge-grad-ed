@@ -11,10 +11,10 @@ public class Jelly {}
 
 package visitor;
 
-// import aquarium.*;
+// import aquarium.*; 
 // import aquarium.*.Jelly;
-// import aquarium.jellies.Jelly;
-// import aquarium.jellies.*;
+// import aquarium.jellies.Jelly; // fine
+// import aquarium.jellies.*;     // fine
 // import aquarium.jellies.Jelly.*;
 
 public class AquariumVisitor {

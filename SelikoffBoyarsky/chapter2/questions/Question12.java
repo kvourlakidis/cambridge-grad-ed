@@ -9,4 +9,4 @@ public class Question12 {
 	}
 }
 
-// Answers: []
+// Hint: this isn't Javascript. Or Sparta.

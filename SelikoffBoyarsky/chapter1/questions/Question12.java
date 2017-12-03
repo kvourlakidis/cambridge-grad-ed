@@ -6,13 +6,11 @@ public class Question12 {
 		float f;
 		Object o;
 
-//		System.out.println(b == null);
-//		System.out.println(f == 0);
-//		System.out.println(o == null);
-//		System.out.println(b == false);
-//		System.out.println(b == true);
-//		System.out.println(f == 0.0);
+		// System.out.println(b == null); // primitive cannot be null
+		// System.out.println(f == 0); // f not initialized
+		// System.out.println(o == null); // o not initialized
+		// System.out.println(b == false); // b not initalized
+		// System.out.println(b == true); // b not initialized
+		// System.out.println(f == 0.0); // f not initialized
 	}
 }
-
-// [ANSWERS]
