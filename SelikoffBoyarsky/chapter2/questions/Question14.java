@@ -10,4 +10,4 @@ public class Question14 {
 	}
 }
 
-// Hint: just be happy this isn't C++. Bad dum.
+// Hint: just be happy this isn't C++. Ba-dum.

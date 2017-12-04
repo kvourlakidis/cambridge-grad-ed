@@ -16,4 +16,4 @@ public class Question09 {
 // by 1, and then assigned to i. However the post-fix 
 // operator uses the 'old' value of i, therefore 
 // the incremented value is over-written.
-// The '=' assignemnt ALWAYS happens last.
+// The '=' assignment ALWAYS happens last.
