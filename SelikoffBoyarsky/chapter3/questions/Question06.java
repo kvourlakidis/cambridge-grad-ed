@@ -1,10 +1,10 @@
-// Question: 
+// Question: what is the output?
 
 public class Question06 {
 
     public void roar(String roar1, StringBuilder roar2) {
         roar1.concat("!!!");
-        roar2.append("!!!");
+        roar2.append("!!!"); // mutates the object
     }
 
     public static void main(String[] args) {
@@ -15,4 +15,10 @@ public class Question06 {
     }
 }
 
-// Hint: 
+// Answers:
+// roar roar
+// roar roar!!!
+// roar!!! roar
+// roar!!! roar!!!
+// An Exception is thrown.
+// The code does not compile.
