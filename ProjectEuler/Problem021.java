@@ -1,4 +1,7 @@
-import java.util.*;
+import java.util.Set;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
 
 /*
     Let d(n) be defined as the sum of proper divisors of n (numbers less than
@@ -14,13 +17,23 @@ import java.util.*;
 
 public class Problem021 {
     public static void main(String[] args) {
-        for (int i=1;i<300;i++) {
+        int min = 1;
+        int max = 10_000;
+        Set<Integer> amicableNumbers = new HashSet<>();
+        for (int i=min;i<max;i++) {
             Set<Integer> divisors = findDivisors(i);
+            if (divisors.size() == 1) continue;
             int sumOfDivisors = sum(divisors);
+            if (sumOfDivisors == i) continue;
             Set<Integer> divisorsOfSum = findDivisors(sumOfDivisors);
+            if (divisorsOfSum.size() == 1) continue;
             int sumOfDivisorsOfSum = sum(divisorsOfSum);
-            if (sumOfDivisorsOfSum == i) System.out.println("Amicable pair: " + i + " and " + sumOfDivisors);
+            if (sumOfDivisorsOfSum == i)
+                amicableNumbers.add(i);
         }
+        System.out.println("Amicable numbers from " + min + " to " + max + ":");
+        System.out.println(amicableNumbers);
+        System.out.println("Sum: " + sum(amicableNumbers));
     }
 
     static Set<Integer> findDivisors(int n) {

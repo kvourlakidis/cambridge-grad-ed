@@ -6,7 +6,7 @@ public class Question05 {
         StringBuilder s2 = new StringBuilder("java");
         if (s1 == s2) // this line does not compile (incomparable types)
             System.out.print("1");
-        if (s1.equals(s2)) // false
+        if (s1.equals(s2))
             System.out.print("2");
     }
 }

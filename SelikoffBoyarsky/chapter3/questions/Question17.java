@@ -10,7 +10,8 @@ public class Question17 {
         // int length = l.length;
         // int length = l.length();
         // int length = l.size;
-        // int length = l.size();
+        int length = l.size();
+        System.out.println(length);
     }
 }
 
