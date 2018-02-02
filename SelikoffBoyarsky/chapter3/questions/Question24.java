@@ -1,6 +1,6 @@
 import java.util.*;
 
-// Question: 
+// Question: what is the output of this code?
 
 public class Question24 {
     public static void main(String[] args) {

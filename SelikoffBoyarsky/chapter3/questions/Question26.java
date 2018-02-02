@@ -14,7 +14,8 @@ public class Question26 {
         ages.add(Integer.valueOf("6")); // returns an Integer
         ages.add(7); // autoboxing of int into Integer
         ages.add(null);
-        for (int age : ages) System.out.print(age);
+        for (int age : ages)
+            System.out.print(age);
     }
 }
 

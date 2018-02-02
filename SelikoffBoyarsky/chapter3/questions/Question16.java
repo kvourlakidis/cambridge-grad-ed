@@ -5,9 +5,9 @@ public class Question16 {
         char[] c = new char[2];
         // int length = c.capacity; // illegal
         // int length = c.capacity(); // illegal
-        // int length = c.length; // legal
+        int length = c.length; // legal
         // int length = c.length(); // illegal
-        int length = c.size; // illegal
+        // int length = c.size; // illegal
         // int length = c.size(); // illegal
     }
 }
