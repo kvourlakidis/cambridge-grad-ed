@@ -30,7 +30,21 @@ public class Problem022 {
         System.out.println(names.length);
     }
 
-    List<String> sort(String[] unsorted) {
-        List<String> sorted = new ArrayList<>();
+    String[] sort(String[] a) { 
+         
+    }
+
+    void transpose(String[] array, int a, int b) {
+   	if (array[a] == array[b]) {
+            return;
+	} else if (a < b && array[a] > array[b]) {
+            String temp = array[a];
+            array[a] = array[b];
+            array[b] = temp;
+        } else if (a > b && array[a] < array[b]) {
+            temp = array[a];
+            array[a] = array[b];
+            array[b] = temp;
+        }
     }
 }

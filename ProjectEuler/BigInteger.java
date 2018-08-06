@@ -4,21 +4,21 @@ public class BigInteger {
 	char[] container;
 	boolean isNegative;
 	static char NEGATION_CHAR = '-';
-	static char SPACE 
-	static char[] LEGAL_CHARS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']; static char INIT_CHAR = '0';
+	static char SPACE = ' ';
+	static char[] LEGAL_CHARS = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'}; 
+	static char INIT_CHAR = '0';
 	
-	
-	private static isLegalChar(char test) {
-		for (char legal in LEGAL_CHARS)
+	private static boolean isLegalChar(char test) {
+		for (char legal : LEGAL_CHARS)
 			if (test == legal) 
 				return true;	
 		return false;	
 	}
 
-	private static parseChar(char in) throws Exception {
+	private static char parseChar(char in) {
 		if (isLegalChar(in))
 			return in;
-		throw new Exception("cannot parse " + in);	
+		throw new RuntimeException("cannot parse " + in);	
 	}
 	
 	public BigInteger() {
@@ -39,17 +39,32 @@ public class BigInteger {
 			for (int i=1; i < s.length(); i++) {
 				container[i - 1] = parseChar(s.charAt(i));
 			}
-			return this;
-		}
-		container = new char[s.length()];
-		isNegative = false;
-		for (int i=0; i < s.length(); i++) {
-			container[i] = parseChar(s.charAt(i));	
+		} else {
+			container = new char[s.length()];
+			isNegative = false;
+			for (int i=0; i < s.length(); i++) {
+				container[i] = parseChar(s.charAt(i));	
+			}
 		}
 	}
-	public static void main(String[] args) {
-		BigInteger x = new BigInteger();	
-		System.out.println(x.container);
 
+	public void add(BigInteger other) {
+		
+	}
+
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		if (isNegative) sb.append(NEGATION_CHAR);
+		for (char c : container) sb.append(c);
+		return sb.toString(); 
+	}
+
+	public static void main(String[] args) {
+		BigInteger x1 = new BigInteger();
+		BigInteger x2 = new BigInteger("1234567890");
+		BigInteger x3 = new BigInteger("-1234567789");
+		System.out.println(x1);
+		System.out.println(x2);
+		System.out.println(x3);
 	}
 }
