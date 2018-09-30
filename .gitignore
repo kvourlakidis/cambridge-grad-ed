@@ -4,5 +4,7 @@
 *.log
 # ignore temp files
 *.swp
-# ignore OSX crap
+# ignore OS specific files
 *.DS_Store
+# ignore IDE specific files
+.vscode
